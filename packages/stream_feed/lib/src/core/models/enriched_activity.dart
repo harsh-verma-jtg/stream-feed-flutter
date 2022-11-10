@@ -67,7 +67,7 @@ class GenericEnrichedActivity<A, Ob, T, Or> extends Equatable {
     final _ = json?['foreign_id'];
     json?.remove('foreign_id');
     json?['foreign_id2'] = _;
-    _$GenericEnrichedActivityFromJson<A, Ob, T, Or>(
+    return _$GenericEnrichedActivityFromJson<A, Ob, T, Or>(
       Serializer.moveKeysToRoot(json, topLevelFields)!,
       fromJsonA ?? (jsonA) => (A == User) ? User.fromJson(jsonA! as Map<String, dynamic>) as A : jsonA as A,
       fromJsonOb ??
